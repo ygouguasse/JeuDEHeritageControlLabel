@@ -12,7 +12,14 @@ namespace ex_jeuDeWinform.vues.Controles
 
         public abstract void DesAbonnerEvenements();
 
-
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                DesabonnerEvenements();
+            }
+            base.Dispose(disposing);
+        }
 
 
 
