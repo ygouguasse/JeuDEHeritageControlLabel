@@ -16,7 +16,7 @@ namespace ex_jeuDeWinform.vues.Controles
         {
             if (disposing)
             {
-                DesabonnerEvenements();
+                DesAbonnerEvenements();
             }
             base.Dispose(disposing);
         }
