@@ -16,7 +16,7 @@ namespace ex_jeuDeWinform.vues.Controles
         public LabelDe()
         {
             BorderStyle = BorderStyle.FixedSingle;
-           // TextAlign=  alignc
+            TextAlign = ContentAlignment.MiddleCenter;
 
         }
 
@@ -26,24 +26,43 @@ namespace ex_jeuDeWinform.vues.Controles
 
              DesAbonnerEvenements();
 
-              De=value;
+             _De = value;
 
             ActualiserAffichage();
 
         }
 
+       
 
-        public override AbonnerEvenements()
+
+
+        public override void AbonnerEvenements()
         {
 
-            De.ValeurChangee += De_ValeurChangee;
+            _De.ValeurChangee += _De_ValeurChangee;
 
 
         }
 
-        private void De_ValeurChangee(object? sender, EventArgs e)
+        private void _De_ValeurChangee(object? sender, EventArgs e)
         {
             ActualiserAffichage();
+        }
+
+
+        public override void DesAbonnerEvenements()
+        {
+
+            _De.ValeurChangee-= _De_ValeurChangee;
+
+        }
+
+        private void ActualiserAffichage()
+        {
+
+            Text=_De.ToString();
+
+
         }
 
 

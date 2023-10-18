@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ex_jeuDeWinform.vues.Controles
 {
-    public class LabelEvenement : Label
+    public abstract class LabelEvenement : Label
     {
-        abstract void AbonnerEvenements();
-        
-        abstract void DesAbonnerEvenements();
+        public abstract void AbonnerEvenements();
+
+        public abstract void DesAbonnerEvenements();
 
 
 
