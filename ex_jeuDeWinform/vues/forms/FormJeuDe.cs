@@ -50,5 +50,10 @@ namespace ex_jeuDeWinform
         {
             _controleur.JouerTour();
         }
+
+        private void FormJeuDe_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
