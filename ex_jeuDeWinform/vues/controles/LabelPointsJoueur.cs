@@ -1,8 +1,8 @@
 ﻿using ex_jeuDeWinform.modeles;
-using System;
+
 namespace ex_jeuDeWinform.vues.controles
 {
-    public class LabelPointsJoueur : Label
+    public class LabelPointsJoueur : LabelEvenements
     {
         private Joueur _joueur = new Joueur();
 
@@ -16,12 +16,12 @@ namespace ex_jeuDeWinform.vues.controles
             AbonnerEvenements();
         }
 
-        private void AbonnerEvenements()
+        protected override void AbonnerEvenements()
         {
             _joueur.ChangementPoints += Joueur_ChangementPoints; ;
         }
 
-        private void DesabonnerEvenements()
+        protected override void DesabonnerEvenements()
         {
             _joueur.ChangementsSelectionne -= Joueur_ChangementPoints;
         }
@@ -34,15 +34,6 @@ namespace ex_jeuDeWinform.vues.controles
         private void ActualiserAffichage()
         {
             Text = _joueur.Points.ToString();
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                DesabonnerEvenements();
-            }
-            base.Dispose(disposing);
         }
     }
 }

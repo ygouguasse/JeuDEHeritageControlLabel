@@ -2,7 +2,7 @@
 
 namespace ex_jeuDeWinform.vues.controles
 {
-    public class LabelNomJoueur : Label
+    public class LabelNomJoueur : LabelEvenements
     {
         private Joueur _joueur = new Joueur();
 
@@ -16,12 +16,12 @@ namespace ex_jeuDeWinform.vues.controles
             AbonnerEvenements();
         }
 
-        private void AbonnerEvenements()
+        protected override void AbonnerEvenements()
         {
             _joueur.ChangementsSelectionne += Joueur_ChangementsSelectionne;
         }
 
-        private void DesabonnerEvenements()
+        protected override void DesabonnerEvenements()
         {
             _joueur.ChangementsSelectionne -= Joueur_ChangementsSelectionne;
         }
@@ -44,15 +44,6 @@ namespace ex_jeuDeWinform.vues.controles
             {
                 BackColor = Color.Red;
             }
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                DesabonnerEvenements();
-            }
-            base.Dispose(disposing);
         }
     }
 }
