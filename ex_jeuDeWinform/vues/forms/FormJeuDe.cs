@@ -16,6 +16,19 @@ namespace ex_jeuDeWinform
 
         private void InitialiserControles()
         {
+            labelDe1.De = _controleur.Des[0];
+            labelDe2.De = _controleur.Des[1];
+            labelDe3.De = _controleur.Des[2];
+            labelDe4.De = _controleur.Des[3];
+            labelDe5.De = _controleur.Des[4];
+
+            labelNomJoueur1.Joueur = _controleur.Joueurs[0];
+            labelNomJoueur2.Joueur = _controleur.Joueurs[1];
+            labelNomJoueur3.Joueur = _controleur.Joueurs[2];
+
+            labelPointsJoueur1.Joueur = _controleur.Joueurs[0];
+            labelPointsJoueur2.Joueur = _controleur.Joueurs[1];
+            labelPointsJoueur3.Joueur = _controleur.Joueurs[2];
         }
 
         private void AbonnerEvenements()
